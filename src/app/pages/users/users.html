@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="Users" ba-panel-class="with-scroll">
+      <button ng-click="openUserModal({})" type="button" class="btn btn-primary btn-with-icon"><i class="ion-person-add"></i>Add User</button>
+      <button type="button" class="btn btn-primary">
+        <input type="file" accept=".csv" onchange="angular.element(this).scope().fileNameChanged(this)" class="file">
+      </button>
+      <button ng-click="bulkAdd()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-upload"></i>Bulk Add Users</button>
+
+      <div class="vertical-scroll">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="table-id">id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="item in users">
+            <td class="table-id">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.email}}</td>
+            <td><button ng-click="openUserModal(item)" type="button" class="btn btn-primary btn-xs"><i class="ion-pencil"></i>Edit</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

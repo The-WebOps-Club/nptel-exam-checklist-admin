@@ -1,0 +1,55 @@
+<div class="add-row-editable-table">
+  <button class="btn btn-primary" ng-click="addQuestion()">Add row</button>
+</div>
+<table class="table table-bordered table-hover table-condensed">
+  <tr>
+    <td></td>
+    <td>text</td>
+    <td>level</td>
+    <td>type</td>
+    <td>priority</td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="question in questions" class="editable-row">
+    <td>
+        {{$index}}
+    </td>
+    <td>
+        <span editable-text="question.text" e-name="text" e-form="rowform" e-required>
+          {{ question.text || 'empty' }}
+        </span>
+    </td>
+    <td class="select-td">
+        <span editable-select="question.level" e-name="level" e-form="rowform" e-selectpicker
+              e-ng-options="s.value as s.text for s in levels">
+          {{ question.level }}
+        </span>
+    </td>
+    <td class="select-td">
+        <span editable-select="question.type" e-name="type" e-form="rowform" e-selectpicker
+              e-ng-options="t.value as t.value for t in types">
+          {{ question.type }}
+        </span>
+    </td>
+    <td>
+        <span editable-text="question.priority" e-name="priority" e-form="rowform" e-required>
+          {{ question.priority || 0 }}
+        </span>
+    </td>
+    <td>
+      <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
+            shown="inserted == questions">
+        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs" ng-click="initSave()">
+          Save
+        </button>
+        <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          Cancel
+        </button>
+      </form>
+      <div class="buttons" ng-show="!rowform.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
+      </div>
+    </td>
+  </tr>
+</table>
