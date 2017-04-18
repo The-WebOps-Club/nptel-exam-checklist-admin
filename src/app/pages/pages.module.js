@@ -9,6 +9,7 @@
     'ui.router',
 
     'BlurAdmin.pages.questions',
+    'BlurAdmin.pages.centers',
     'BlurAdmin.pages.users'
   ])
       .config(routeConfig);
