@@ -10,6 +10,7 @@
 
     'BlurAdmin.pages.questions',
     'BlurAdmin.pages.centers',
+    'BlurAdmin.pages.sessions',
     'BlurAdmin.pages.users'
   ])
       .config(routeConfig);

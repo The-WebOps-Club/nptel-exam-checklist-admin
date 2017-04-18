@@ -1,0 +1,65 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Session</h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <fieldset>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="control-label" for="name">Name</label>
+        <div class="">
+        <input ng-model="item.name" id="name" name="name" type="text" placeholder="name" class="form-control input-md" required="">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="date">Date</label>
+        <div class="">
+        <input ng-model="item.date" id="date" name="date" type="text" placeholder="2016-10-23" class="form-control input-md" required="">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="start_time">Start Time</label>
+        <div class="">
+        <input ng-model="item.start_time" id="start_time" name="start_time" type="text" placeholder="09:00:00+05:30" class="form-control input-md" required="">
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="end_time">End Time</label>
+        <div class="">
+        <input ng-model="item.end_time" id="end_time" name="end_time" type="text" placeholder="12:00:00+05:30" class="form-control input-md" required="">
+
+        </div>
+      </div>
+<!--
+      <div class="form-group">
+        <label class="control-label" for="">Centers</label>
+        <div class="">
+          <label class="custom-checkbox">
+            <input ng-model="item.centers_all" type="checkbox"><span>All Centers</span>
+          </label>
+          <br/>
+          <div ng-repeat="center in centers"><label class="custom-checkbox">
+            <input ng-model="item.centers[center.id]" type="checkbox"><span>{{center.name}}</span>
+          </label><br/>
+          <div>
+        </div>
+      </div> -->
+
+      </fieldset>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="$close(item)">Save changes</button>
+    <button type="button" class="btn btn-danget" ng-click="$dismiss()">Cancel</button>
+  </div>
+</div>

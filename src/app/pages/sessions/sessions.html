@@ -1,11 +1,12 @@
 <div class="row">
   <div class="col-md-12">
-    <div ba-panel ba-panel-title="Centers" ba-panel-class="with-scroll">
-      <button ng-click="openModal({})" type="button" class="btn btn-primary btn-with-icon"><i class="ion-person-add"></i>Add Center</button>
+    <div ba-panel ba-panel-title="Sessions" ba-panel-class="with-scroll">
+      <button ng-click="openModal({})" type="button" class="btn btn-primary btn-with-icon"><i class="ion-person-add"></i>Add Session</button>
       <button type="button" class="btn btn-primary">
         <input type="file" accept=".csv" onchange="angular.element(this).scope().fileNameChanged(this)" class="file">
       </button>
-      <button ng-click="bulkAdd()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-upload"></i>Bulk Add Centers</button>
+      <button ng-click="bulkAdd()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-upload"></i>Bulk Add Sessions</button>
+      <button ng-click="syncSessions()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-refresh"></i>Sync Sessions</button>
 
       <div class="">
         <table class="table table-striped">
@@ -13,20 +14,18 @@
           <tr>
             <th class="table-id">id</th>
             <th>Name</th>
-            <th>State</th>
-            <th>Allotted User Id</th>
-            <th>Alloted User Name</th>
-            <th>Alloted User Email</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
           </tr>
           </thead>
           <tbody>
-          <tr ng-repeat="item in centers">
+          <tr ng-repeat="item in sessions">
             <td class="table-id">{{item.id}}</td>
             <td>{{item.name}}</td>
-            <td>{{item.state}}</td>
-            <td>{{item.allotted_user.id}}</td>
-            <td>{{item.allotted_user.name}}</td>
-            <td>{{item.allotted_user.email}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.start_time}}</td>
+            <td>{{item.end_time}}</td>
             <td><button ng-click="openModal(item)" type="button" class="btn btn-primary btn-xs"><i class="ion-pencil"></i>Edit</button></td>
           </tr>
           </tbody>

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.users')
+  angular.module('BlurAdmin.pages.centers')
     .controller('CentersPageCtrl', CentersPageCtrl);
 
   /** @ngInject */
