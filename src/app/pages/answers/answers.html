@@ -1,9 +1,16 @@
-
+<style>
+    .trueanswer {
+        background-color: lightgreen;
+    }
+    .falseanswer {
+        background-color: lightcoral;
+    }
+</style>
 <div ba-panel ba-panel-title="Answers" ba-panel-class="with-scroll full-height-panel">
   <button ng-click="getData()" type="button" class="btn btn-primary btn-with-icon"><i class="ion-refresh"></i>Refresh</button>
   <br/>
   <div class="">
-    <table class="table table-bordered table-hover" id="dataTables-example">
+    <table class="table table-striped table-bordered table-hover table-scroll" id="dataTables-example">
         <thead>
             <tr>
                 <th>Session/Question</th>
@@ -11,9 +18,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="" ng-repeat="data in tableData">
+            <tr class="odd gradeX" ng-repeat="data in tableData">
                 <td>{{data.session}}</td>
-                <td ng-repeat="q in questions">{{data[q.id]}}</td>
+                <td ng-repeat="q in questions" ng-class="{trueanswer: data[q.id]===true, falseanswer: data[q.id]===false}">{{data[q.id]}}</td>
+            </tr>
+            <tr>
+                <th>Session/Question</th>
+                <th ng-repeat="question in questions">{{question.text}}</th>
             </tr>
         </tbody>
     </table>
