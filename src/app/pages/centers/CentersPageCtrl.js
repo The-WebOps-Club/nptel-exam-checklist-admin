@@ -109,7 +109,8 @@
         $scope.$apply();
         console.log($scope.data);
         var insert_objects = [];
-        for(var item of $scope.data){
+        for(var i in $scope.data){
+          var item = $scope.data[i];
           var name = item[0];
           var state = item[1];
           try {

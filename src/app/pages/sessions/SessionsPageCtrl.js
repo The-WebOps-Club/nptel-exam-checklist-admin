@@ -34,15 +34,18 @@
         columns: ['id','session_id', 'center_id']
       }).then(function (data) {
         console.log(data);
-        for(var session of $scope.sessions){
-          for(var center of $scope.centers) {
+        for(var si in $scope.sessions){
+          var session = $scope.sessions[si];
+          for(var ci in $scope.centers) {
+            var center = $scope.centers[ci];
             var obj = {
               session_id: session.id,
               center_id: center.id,
               is_visible: true
             }
             var found = false;
-            for(var ses_cent_obj of data){
+            for(var ses_cent_i in data){
+              var ses_cent_obj = data[ses_cent_i];
               if (ses_cent_obj.session_id == obj.session_id && ses_cent_obj.center_id == obj.center_id) {
                 found = true;
               }

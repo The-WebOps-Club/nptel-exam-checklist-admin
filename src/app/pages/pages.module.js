@@ -9,6 +9,7 @@
     'ui.router',
 
     'BlurAdmin.pages.questions',
+    'BlurAdmin.pages.answers',
     'BlurAdmin.pages.centers',
     'BlurAdmin.pages.sessions',
     'BlurAdmin.pages.users'
