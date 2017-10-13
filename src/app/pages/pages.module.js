@@ -12,7 +12,8 @@
     'BlurAdmin.pages.answers',
     'BlurAdmin.pages.centers',
     'BlurAdmin.pages.sessions',
-    'BlurAdmin.pages.users'
+    'BlurAdmin.pages.users',
+    'BlurAdmin.pages.announcements'
   ])
       .config(routeConfig);
 

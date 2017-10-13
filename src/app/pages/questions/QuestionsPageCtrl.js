@@ -48,7 +48,7 @@
       {value: 'timestamp'},
     ];
 
-    $scope.removeUser = function(index) {
+    $scope.removeQuestion = function(index) {
       $scope.questions.splice(index, 1);
     };
 
