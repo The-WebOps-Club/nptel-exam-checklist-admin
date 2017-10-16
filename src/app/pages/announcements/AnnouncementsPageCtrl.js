@@ -16,7 +16,7 @@
     function getAnnouncements(){
       hasura.query('select', arga).then(function(data){
           $scope.original = data.slice();
-          $scope.questions = data.slice();
+          $scope.announcements = data.slice();
       }, function(error){
         console.log(error);
       })
