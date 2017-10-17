@@ -7,8 +7,8 @@
   function Hasura($q, $http, $window){
     this.authorized = false;
     this.token = '';
-    // this.appname = "webops.club";
-    this.appname = "ballpoint32.hasura-app.io";
+    this.appname = "webops.club";
+    // this.appname = "ballpoint32.hasura-app.io";
     var token = $window.localStorage.getItem('token');
     this.token = token;
     if (token) {
@@ -16,8 +16,8 @@
       this.authorized = true;
     }
     var user = undefined
-    // var hostname = "webops.club";
-    var hostname = "ballpoint32.hasura-app.io";
+    var hostname = "webops.club";
+    // var hostname = "ballpoint32.hasura-app.io";
     var scheme = 'https';
     var endpoints = {
         'auth': scheme + '://auth.' + hostname,
