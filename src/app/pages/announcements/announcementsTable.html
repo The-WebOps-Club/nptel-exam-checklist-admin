@@ -18,7 +18,7 @@
     </td>
     <td>
       <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
-            shown="inserted == questions">
+            shown="inserted == announcements">
         <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs" ng-click="initSave()">
           Save
         </button>
@@ -28,7 +28,7 @@
       </form>
       <div class="buttons" ng-show="!rowform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
-        <!-- <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeAnnouncement($index)">Delete</button> -->
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeAnnouncement($index)">Delete</button>
       </div>
     </td>
   </tr>

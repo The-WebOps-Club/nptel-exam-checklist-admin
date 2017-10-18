@@ -31,9 +31,9 @@
       $scope.announcements.push($scope.inserted);
     };
 
-    // $scope.removeAnnouncement = function(index) {
-    //   $scope.announcements.splice(index, 1);
-    // };
+    $scope.removeAnnouncement = function(index) {
+      $scope.announcements.splice(index, 1);
+    };
 
     editableOptions.theme = 'bs3';
     editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
@@ -79,8 +79,8 @@
       });
     }, true);
 
-    // $scope.initSave = function () {
-    // }
+    $scope.initSave = function () {
+    }
   }
 
 })();
